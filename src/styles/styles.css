@@ -1,0 +1,114 @@
+.cantarell-regular {
+    font-family: "Cantarell", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.cantarell-bold {
+    font-family: "Cantarell", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.cantarell-regular-italic {
+    font-family: "Cantarell", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.cantarell-bold-italic {
+    font-family: "Cantarell", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+*,html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #0a0f15;
+}
+
+nav{
+    background: linear-gradient(270deg, #0f2f4e 25%, #3588b3) ;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    margin-left: auto;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-family: "Cantarell", sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: all;
+    transition-duration: 500ms;
+    border-bottom: 1px solid rgba(42, 158, 218, 0);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 24px rgba(255, 255, 255, 0.6), 0 0 36px rgba(255, 255, 255, 0.4);
+}
+
+nav ul li a:hover{
+    color: #44b4ef;
+    border-bottom: 2px solid #44b4ef;
+    text-shadow: 0 0 16px rgba(68, 180, 239, 1), 0 0 32px rgba(68, 180, 239, 0.9), 0 0 48px rgba(68, 180, 239, 0.7);
+}
+
+p{
+    color: white;
+}
+
+h1{
+    color: white;
+    margin-top: auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 10rem;
+    font-family: "Exo", sans-serif;
+    font-weight: 800;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 24px rgba(255, 255, 255, 0.6), 0 0 36px rgba(255, 255, 255, 0.4);
+    font-size: 5rem;
+    animation: glow-flicker-animation 2s infinite;
+}
+
+h4{
+    color: white;
+    margin-top: auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Exo", sans-serif;
+}
+@keyframes glow-flicker-animation {
+    0% {
+        text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 24px rgba(255, 255, 255, 0.6), 0 0 36px rgba(255, 255, 255, 0.4);
+    }
+    20% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.9), 0 0 50px rgba(255, 255, 255, 0.7);
+    }
+    40% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
+    }
+    60% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.5);
+    }
+    80% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 24px rgba(255, 255, 255, 0.6), 0 0 36px rgba(255, 255, 255, 0.4);
+    }
+}
