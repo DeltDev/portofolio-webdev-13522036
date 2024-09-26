@@ -34,9 +34,12 @@ body{
 
 nav{
     background: linear-gradient(270deg, #0f2f4e 25%, #3588b3) ;
+    background-size: 200% 100%;
     display: flex;
     justify-content: space-between;
+    position: sticky;
     padding: 1rem 2rem;
+    animation: navbar-glow 6s ease infinite;
 }
 
 nav ul{
@@ -71,6 +74,7 @@ p{
 }
 
 h1{
+    /*border: #44b4ef 1px solid;*/
     color: white;
     margin-top: auto;
     display:flex;
@@ -81,7 +85,7 @@ h1{
     font-weight: 800;
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 24px rgba(255, 255, 255, 0.6), 0 0 36px rgba(255, 255, 255, 0.4);
     font-size: 5rem;
-    animation: glow-flicker-animation 2s infinite;
+    animation: glow-flicker-animation 3s ease-in-out infinite;
 }
 
 h4{
@@ -91,6 +95,24 @@ h4{
     justify-content: center;
     align-items: center;
     font-family: "Exo", sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 24px rgba(255, 255, 255, 0.6), 0 0 36px rgba(255, 255, 255, 0.4);
+    animation: glow-flicker-animation 3s ease-in-out infinite;
+    padding: 1rem;
+    z-index: 0;
+}
+
+@keyframes navbar-glow{
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 100% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
 }
 @keyframes glow-flicker-animation {
     0% {
@@ -110,5 +132,83 @@ h4{
     }
     100% {
         text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 24px rgba(255, 255, 255, 0.6), 0 0 36px rgba(255, 255, 255, 0.4);
+    }
+}
+
+/* 3D CSS PART*/
+.container {
+    /*border: #44b4ef 1px solid;*/
+    margin-top: auto;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 2000px;
+    perspective-origin: top right;
+    z-index: -1000;
+    position: relative;
+}
+
+.cube {
+    display: flex;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    animation: cubeRotate 10s linear infinite;
+}
+
+.side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    border: 2px solid #7fb0cf;
+}
+
+.front, .back, .left, .right, .top, .bottom {
+    background-color: #2c5673;
+    animation: cubeGlow 6s ease infinite;
+    transition: box-shadow 0.5s ease;
+}
+
+.front {
+    transform: translateZ(150px);
+}
+.back {
+    transform: translateZ(-150px);
+}
+
+.left {
+    transform: rotateY(90deg) translateZ(150px);
+}
+.right {
+    transform: rotateY(-90deg) translateZ(150px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(150px);
+}
+.bottom {
+    transform: rotateX(-90deg) translateZ(150px);
+}
+@keyframes cubeRotate {
+    from { transform: rotateY(0deg) rotateX(720deg) rotateZ(0deg); }
+    to { transform: rotateY(360deg) rotateX(0deg) rotateZ(360deg); }
+}
+
+@keyframes cubeGlow {
+    0% {
+        box-shadow: 0 0 20px 5px rgba(53, 136, 179, 0.8), inset 0 0 15px 5px rgba(53, 136, 179, 0.8);
+        filter: brightness(1);
+    }
+    50% {
+        box-shadow: 0 0 50px 20px rgba(53, 136, 179, 1), inset 0 0 30px 10px rgba(53, 136, 179, 1);
+        filter: brightness(1.5);
+    }
+    100% {
+        box-shadow: 0 0 20px 5px rgba(53, 136, 179, 0.8), inset 0 0 15px 5px rgba(53, 136, 179, 0.8);
+        filter: brightness(1);
     }
 }
