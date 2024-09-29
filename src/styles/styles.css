@@ -235,8 +235,20 @@ h4{
     justify-content: center;
     margin: 20px;
     gap: 20px;
+    align-items: center;
+    height: 100%;
 }
-
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.skill-container h4{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .skill-item-container {
     display: flex;
     flex-direction: column;
